@@ -61,6 +61,21 @@ cd /tmp || die
         ) || die
     }
 
+    [ $BUILD_TARGET != gn-build ] || {
+        # Install ninja
+        sudo apt-get install ninja-build
+
+        # Install gn
+        (
+        cd $HOME
+        git clone https://gn.googlesource.com/gn
+        cd gn
+        python build/gen.py
+        ninja -C out
+        export PATH=$HOME/gn/out:$PATH
+        ) || die
+    }
+
     [ $BUILD_TARGET != posix-app-pty ] || {
         sudo apt-get install socat expect || die
         JOBS=$(getconf _NPROCESSORS_ONLN)
