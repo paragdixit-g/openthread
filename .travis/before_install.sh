@@ -38,6 +38,8 @@ set -x
 
 cd /tmp || die
 
+echo "Running before install script"
+
 [ $TRAVIS_OS_NAME != linux ] || {
     (cd /etc/apt/sources.list.d && sudo rm -rf cassandra.list* couchdb.list* mongodb-3.4.list* rabbitmq_rabbitmq-server.list* chris-lea-redis-server.list* github_git-lfs.list* pgdg.list)
     sudo apt-get update || die
@@ -73,6 +75,7 @@ cd /tmp || die
         python build/gen.py
         ninja -C out
         export PATH=$HOME/gn/out:$PATH
+        gn_unittest
         ) || die
     }
 
@@ -160,3 +163,5 @@ cd /tmp || die
     }
 
 }
+
+echo "Done running the script"
