@@ -11,4 +11,4 @@ if (current_os == "") {
   current_os = target_os
 }
 
-set_default_toolchain("//build_gn/toolchain:gcc")
+set_default_toolchain("//third_party/build_gn/toolchain:gcc")

@@ -73,9 +73,7 @@ echo "Running before install script"
         git clone https://gn.googlesource.com/gn
         cd gn
         python build/gen.py
-        ninja -C out
-        export PATH=$HOME/gn/out:$PATH
-        gn_unittest
+        ninja -C out && export PATH=$HOME/gn/out:$PATH && gn_unittest
         ) || die
     }
 

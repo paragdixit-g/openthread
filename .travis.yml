@@ -69,6 +69,7 @@ jobs:
     - env: BUILD_TARGET="gn-build" VERBOSE=1
       os: linux
       dist: trusty
+      compiler: clang
       script: .travis/script.sh
       #    - env: BUILD_TARGET="posix-distcheck" VERBOSE=1 VIRTUAL_TIME=1
       #      os: linux

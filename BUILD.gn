@@ -173,10 +173,8 @@ static_library("lib-ot-core") {
   include_dirs = [
     "include",
     "src",
-    "src/cli",
     "src/core",
     "src/ncp",
-    "src/posix/platform",
     "third_party",
     "third_party/mbedtls",
     "third_party/mbedtls/repo/include"
@@ -187,7 +185,7 @@ static_library("lib-ot-core") {
     "OPENTHREAD_FTD=1",
     "SPINEL_PLATFORM_HEADER=\"spinel_platform.h\"",
     "OPENTHREAD_CONFIG_FILE=<openthread-config-android.h>",
-    "PACKAGE_NAME=\"OPENTHREAD-EDGE-ROUTER\"",
+    "PACKAGE_NAME=\"OPENTHREAD-CORE\"",
     "PACKAGE_VERSION=\"1.0.0\""
   ]
 }
