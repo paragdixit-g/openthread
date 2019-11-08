@@ -69,7 +69,7 @@ echo "Running before install script"
         cd $HOME
         wget https://chrome-infra-packages.appspot.com/dl/infra/ninja/linux-amd64/+/latest
         unzip -o latest
-        chmod a+x ninja && mkdir -p bin && mv ninja bin && export PATH=${HOME}/bin:$PATH
+        chmod a+x ninja && mkdir -p bin && mv -f ninja bin/ && export PATH=${HOME}/bin:$PATH
         ninja --version
         ) || die
 
@@ -79,7 +79,7 @@ echo "Running before install script"
         cd $HOME
         wget https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
         unzip -o latest
-        chmod a+x gn && mv gn bin
+        chmod a+x gn && mv -f gn bin/
         gn --version
         ) || die
     }
