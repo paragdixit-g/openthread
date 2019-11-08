@@ -65,7 +65,7 @@ echo "Running before install script"
 
     [ $BUILD_TARGET != gn-build ] || {
         # Install ninja
-        sudo apt-get install ninja-build
+        sudo apt-get install -y ninja-build
 
         # Install gn
         (
