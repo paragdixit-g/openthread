@@ -98,12 +98,14 @@ python --version || die
     scan-build --status-bugs -analyze-headers -v make -j2 || die
 }
 
+pwd
+
 [ $BUILD_TARGET != android-build ] || {
     (cd .. && ${TRAVIS_BUILD_DIR}/.travis/check-android-build) || die
 }
 
 [ $BUILD_TARGET != gn-build ] || {
-    (cd .. && ${TRAVIS_BUILD_DIR}/.travis/check-gn-build) || die
+    (cd ${TRAVIS_BUILD_DIR} && .travis/check-gn-build) || die
 }
 
 build_cc1352() {
