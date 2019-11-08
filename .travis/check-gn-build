@@ -35,9 +35,9 @@ set -e
 set -x
 
 main() {
-    gn gen out
-    ninja -C out
-    test -x out/obj/lib-ot-core.a
+    gn gen gn-out
+    ninja -C gn-out
+    test -f gn-out/obj/lib-ot-core.a
 }
 
 main "$@"
