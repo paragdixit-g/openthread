@@ -74,7 +74,7 @@ jobs:
       addons:
         apt:
           packages:
-            - clang-5
+            - clang-5.0
       #    - env: BUILD_TARGET="posix-distcheck" VERBOSE=1 VIRTUAL_TIME=1
       #      os: linux
       #      compiler: clang
