@@ -71,10 +71,6 @@ jobs:
       dist: trusty
       compiler: clang++
       script: .travis/script.sh
-      addons:
-        apt:
-          packages:
-            - clang-5.0
       #    - env: BUILD_TARGET="posix-distcheck" VERBOSE=1 VIRTUAL_TIME=1
       #      os: linux
       #      compiler: clang

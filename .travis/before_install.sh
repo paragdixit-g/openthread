@@ -70,10 +70,11 @@ echo "Running before install script"
         # Install gn
         (
         cd $HOME
+        wget https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
         git clone https://gn.googlesource.com/gn
-        cd gn
-        python build/gen.py
-        ninja -C out && export PATH=$HOME/gn/out:$PATH && gn_unittest
+        unzip latest
+        chmod a+x gn && mkdir bin && mv gn bin && export PATH=${HOME}/bin:$PATH
+        gn --version
         ) || die
     }
 
