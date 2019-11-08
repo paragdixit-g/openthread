@@ -65,14 +65,21 @@ echo "Running before install script"
 
     [ $BUILD_TARGET != gn-build ] || {
         # Install ninja
-        sudo apt-get install -y ninja-build
+        (
+        cd $HOME
+        wget https://chrome-infra-packages.appspot.com/dl/infra/ninja/linux-amd64/+/latest
+        unzip -o latest
+        chmod a+x ninja && mkdir -p bin && mv ninja bin && export PATH=${HOME}/bin:$PATH
+        ninja --version
+        ) || die
+
 
         # Get latest gn
         (
         cd $HOME
         wget https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
         unzip -o latest
-        chmod a+x gn && mkdir -p bin && mv gn bin && export PATH=${HOME}/bin:$PATH
+        chmod a+x gn && mv gn bin
         gn --version
         ) || die
     }
