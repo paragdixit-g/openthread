@@ -71,8 +71,7 @@ echo "Running before install script"
         (
         cd $HOME
         wget https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
-        git clone https://gn.googlesource.com/gn
-        unzip latest
+        unzip -o latest
         chmod a+x gn && mkdir bin && mv gn bin && export PATH=${HOME}/bin:$PATH
         gn --version
         ) || die
