@@ -67,12 +67,12 @@ echo "Running before install script"
         # Install ninja
         sudo apt-get install -y ninja-build
 
-        # Install gn
+        # Get latest gn
         (
         cd $HOME
         wget https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/latest
         unzip -o latest
-        chmod a+x gn && mkdir bin && mv gn bin && export PATH=${HOME}/bin:$PATH
+        chmod a+x gn && mkdir -p bin && mv gn bin && export PATH=${HOME}/bin:$PATH
         gn --version
         ) || die
     }
