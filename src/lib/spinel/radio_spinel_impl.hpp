@@ -322,6 +322,8 @@ otError RadioSpinel<InterfaceType, ProcessContextType>::CheckRadioCapabilities(v
     {
         otRadioCaps missingCaps = (mRadioCaps & kRequiredRadioCaps) ^ kRequiredRadioCaps;
 
+        (void) missingCaps;
+
         otLogCritPlat("RCP is missing required capabilities: %s%s%s%s%s",
                       (missingCaps & OT_RADIO_CAPS_ACK_TIMEOUT) ? "ack-timeout " : "",
                       (missingCaps & OT_RADIO_CAPS_TRANSMIT_RETRIES) ? "tx-retries " : "",
