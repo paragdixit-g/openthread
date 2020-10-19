@@ -143,6 +143,7 @@ static_library("mbedtls") {
     "repo/library/dhm.c",
     "repo/library/ecdh.c",
     "repo/library/ecdsa.c",
+    "repo/library/ecjpake.c",
     "repo/library/ecp.c",
     "repo/library/ecp_curves.c",
     "repo/library/entropy.c",
